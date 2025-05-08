@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Generator</title>
+</head>
+<body>
+    <h2>Prime Number Generator</h2>
+    <form method="post" action="primeV1.jsp">
+        Lower Limit: <input type="number" name="lowerLimit" required><br>
+        Upper Limit: <input type="number" name="upperLimit" required><br>
+        <input type="submit" value="Generate Primes">
+    </form>
+</body>
+</html>
