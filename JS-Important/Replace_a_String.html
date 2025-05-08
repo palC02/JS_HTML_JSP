@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Replace a word with another</title>
+</head>
+<body>
+ <table>
+ <tr>
+ <td>Enter a String: </td>
+ <td><input type="text" id="str"></td>
+ </tr>
+ <tr>
+ <td>Enter the word to replace: </td>
+ <td><input type="text" id="str1"></td>
+ </tr>
+ <tr>
+ <td>Enter the word to replace with: </td>
+ <td><input type="text" id="str2"></td>
+ </tr>
+ <tr>
+ <td></td>
+ <td>
+ <button onclick="strenter()">Enter</button>
+ <button onclick='clr()'>Clear</button>
+ </td>
+ </tr>
+ </table>
+ <p id="replace"></p>
+ <script>
+ function strenter() {
+ if (document.getElementById("str").value == "") {
+ alert("Please Enter a Valid String...");
+ document.getElementById("str").value = "";
+ document.getElementById("str").focus();
+ }
+ else if (document.getElementById("str1").value == "") {
+ alert("Please Enter a Valid String...");
+ document.getElementById("str1").value = "";
+ document.getElementById("str1").focus();
+ }
+ else if (document.getElementById("str2").value == "") {
+ alert("Please Enter a Valid String...");
+ document.getElementById("str2").value = "";
+ document.getElementById("str2").focus();
+ }
+ else {
+ var str = document.getElementById("str").value;
+ var str1 = document.getElementById("str1").value;
+ var str2 = document.getElementById("str2").value;
+ str = str.replaceAll(str1, str2);
+ document.getElementById("replace").innerHTML = "New String: " + str;
+ }
+ }
+ function clr() {
+ document.getElementById("str").value = "";
+ document.getElementById("str1").value = "";
+ document.getElementById("str2").value = "";
+document.getElementById("replace").innerHTML = "";
+ document.getElementById("str").focus();
+ }
+ </script>
+</body>
+</html>
