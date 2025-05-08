@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <p>click the button as long as<em>i</em></p>
+        <button onclick="Myfunction()">Try it</button>
+        <p id="demo"></p>
+
+        <script>
+            function Myfunction(){
+                var x="",i=0;
+
+                do{
+                    x="<center><font color='red' size='12'>"+x+"The Number is "+i+"</font></center><br>";
+                    i++;
+                }while(i<5)
+                document.getElementById("demo").innerHTML=x;
+            }
+        </script>
+    </body>
+</html>
