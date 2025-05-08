@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+    <script language="javascript">
+        var bgimages= new Array()
+        bgimages[0]="1.jpg"
+        bgimages[1]="2.jpg"
+        bgimages[2]="3.jpg"
+        bgimages[3]="4.jpg"
+        bgimages[4]="5.jpg"
+        bgimages[5]="6.jpg"
+        bgimages[6]="7.jpg"
+        bgimages[7]="8.jpg"
+
+        var pathToImg=new Array()
+        for(i=0;i<bgimages.length;i++)
+        {
+            pathToImg[i]= new Image()
+            pathToImg[i].src= bgimages[i]
+        }
+        var inc=-1
+        function bgSlide(){
+            if(inc<bgimages.length-1)
+                inc++
+            else
+                inc=0
+            document.body.background=pathToImg[inc].src
+        }
+        if(document.all||document.getElementById)
+        window.onload=new Function('setInterval("bgSlide()",500)')
+    </script>
+</head>
+<body>
+    <font color="red"><h2>WELCOME TO SLIDESHOW</h2></font>
+</body>
+</html>
