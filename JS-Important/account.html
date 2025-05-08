@@ -1,0 +1,47 @@
+-- A person deposits Rs 1000 in a fixed account yielding 5% interest. Compute the amount
+in the account at the end of each year for n years.
+
+
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Calculate Amount in Your Account</title>
+ </head>
+ <body>
+ <h4>Enter Number of Years: </h4>
+ <input type="text" id="year">
+ <input type="button" value="Calculate" onclick="calculate()">
+ <button
+ onclick="document.getElementById('year').value='';
+ document.getElementById('result').innerHTML='';
+ document.getElementById('year').focus();">
+ Clear
+ </button>
+ <p id="result"></p>
+ <script>
+ function calculate(){
+ var num = Number(document.getElementById("year").value);
+ if(document.getElementById("year").value=="" ||
+isNaN(document.getElementById("year").value) || num<=0){
+ alert("Please Enter a Valid Number of Years...");
+ document.getElementById('year').value='';
+ document.getElementById("year").focus();
+ }
+
+ else{
+ var bal = 1000;
+ document.getElementById("result").innerHTML = "Initial Balance: "+bal;
+ for(let i = 1; i<=num; i++){
+ // var a = (5*bal)/100;
+ // bal += a;
+ var a = bal *(1+5/100)**i; //alternate
+ document.getElementById("result").innerHTML += "<br>Balance after "+i+" year
+is: "+a.toFixed(2);
+ }
+ }
+ }
+ </script>
+ </body>
+</html>
